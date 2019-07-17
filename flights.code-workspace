@@ -1,0 +1,24 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"sqltools.connections": [
+			{
+				"connectionTimeout": 15,
+				"database": "d2dum1tadhkk6m",
+				"dialect": "PostgreSQL",
+				"name": "fwd2ed",
+				"password": "4eac997c7817e9332579c9fd8d22e5bb330cc00142af6a576e7987488e870b54",
+				"port": 5432,
+				"server": "ec2-107-22-160-185.compute-1.amazonaws.com",
+				"username": "tkzkxkbhficeim",
+				"pgOptions": {
+					"ssl": "true"
+				}
+			}
+		]
+	}
+}
