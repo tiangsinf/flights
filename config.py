@@ -10,11 +10,11 @@ class Config:
         pass
 
 class devConfig(Config):
-    DEBUG=True
-    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    DEBUG = True
+    SQLALCHEMY_DATABASE_URI = os.getenv('DEV_DATABASE_URL')
 
 class testConfig(Config):
-    DEBUG=True
+    TESTING = True
     SQLALCHEMY_DATABASE_URI = os.getenv('TEST_DATABASE_URL')
 
 class prodConfig(Config):

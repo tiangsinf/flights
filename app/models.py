@@ -10,7 +10,7 @@ class Flight(db.Model):
     passenger = db.relationship('Passenger', backref = 'flights')
 
     def __repr__(self):
-        return f'<Origin: {self.username}, Destination: {self.destination}>'
+        return f'<Origin: {self.origin}, Destination: {self.destination}>'
 
 class Passenger(db.Model):
     __tablename__ = 'passengers'
