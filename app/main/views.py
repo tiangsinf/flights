@@ -1,5 +1,5 @@
 # import all modules from plugins
-from flask import render_template, session, redirect, url_for
+from flask import render_template, request, session, redirect, url_for, flash
 from . import main
 from .. import db
 from app.models import *
