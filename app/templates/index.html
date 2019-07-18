@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
-    <div class="input-group mb-3" style="padding-top:30px; padding-right:500px; padding-left:500px;">
+    <div class="input-group mb-3">
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Select Flight</label>
         </div>
@@ -11,13 +11,13 @@
             {% endfor %}
         </select>
     </div>
-    <div class="input-group mb-3" style="padding-top:15px; padding-right:500px; padding-left:500px;">
+    <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Passenger Name</span>
         </div>
         <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
     </div>
-    <div class="input-group mb-3" style="padding-top:15px; padding-right:500px; padding-left:500px;">
+    <div class="input-group mb-3">
         <button type="button" class="btn btn-primary btn-lg btn-block">Book My Flight</button>
     </div>
 {% endblock %}
