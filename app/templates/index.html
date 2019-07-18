@@ -4,18 +4,26 @@
         <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Select Flight</label>
         </div>
-        <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            {% for flight in flights %}
-                <option>{{ flight.id }}: From {{ flight.origin }} to {{ flight.destination }} in {{ flight.duration }}</option>
-            {% endfor %}
-        </select>
+
+        <!--Select flight-->
+        <form method="get|post">
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                {% for flight in flights %}
+                    <option>{{ flight.id }}: From {{ flight.origin }} to {{ flight.destination }} in {{ flight.duration }}</option>
+                {% endfor %}
+            </select>
+        </form>
     </div>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Passenger Name</span>
         </div>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+
+        <!--Input passenger name-->
+        <form action="{{ url_for('/') }}" method="get|post">
+            <input name="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </form>
     </div>
     <div class="input-group mb-3">
         <button type="button" class="btn btn-primary btn-lg btn-block">Book My Flight</button>
