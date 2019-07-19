@@ -1,0 +1,4 @@
+1. Flash message when flight is booked successfully
+2. Remove hello.html
+3. Highlight navbar when menu is active
+4.
