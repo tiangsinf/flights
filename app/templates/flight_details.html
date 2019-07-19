@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="container">
+        <h3>Flight Details for Flight {{ flight }}</h3>
+        <ul>
+            <li>Departing from: {{ origin }}</li>
+            <li>Arriving at: {{ destination }}</li>
+            <li>Flight time: {{ duration }}minutes</li>
+        </ul>
+
+        <h3>Passengers Onboard </h3>
+        <ol>
+            {% for p in ps %}
+            <li>{{ p.name }}</li>
+            {% endfor %}
+        </ol>
+    </div> 
+{% endblock %}
