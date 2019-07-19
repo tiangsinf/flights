@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block body %}
+    <form action="{{ url_for('main.flightDetails') }}" method="post">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">Select Flight</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01" name="flight" required>
+                <option selected value="" disabled>Choose...</option>
+                {% for flight in flights %}
+                    <option value="{{ flight.id }}">
+                        {{ flight.id }}: From {{ flight.origin }} to {{ flight.destination }} in {{ flight.duration }}
+                    </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Show Flight Details</button>
+        </div>
+    </form>
+{% endblock %}
