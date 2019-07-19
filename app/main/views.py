@@ -13,15 +13,33 @@ def index():
 @main.route('/book', methods=['POST'])
 def book():
     name = request.form.get('name')
-    flight = request.form.get('flight')
+    flight = int(request.form.get('flight'))
         
     # check if selected flight exist
     if Flight.query.filter(Flight.id == flight).first() is None:
         return flash('Invalid Flight ID')
     
     # add passenger to table
-    add_passenger = Passenger(name=name, flight_id=flight)
+    add_passenger = Passenger(name = name, flight_id = flight)
     db.session.add(add_passenger)
     db.session.commit()
 
-    return render_template('hello.html', name=name, flight=flight)
+    return render_template('hello.html', name = name, flight = flight)
+
+@main.route('/listing')
+def flightList():
+    flights = Flight.query.all()
+    return render_template('flight_list.html', flights = flights)
+
+@main.route('/flightDetails', methods=['POST'])
+def flightDetails():
+    flight_id = int(request.form.get('flight'))
+    f = Flight.query.filter(Flight.id == flight_id).first()
+    id = f.id
+    origin = f.origin
+    destination = f.destination
+    duration = f.duration
+
+    ps = Passenger.query.filter(Passenger.flight_id == flight_id).all()
+
+    return render_template('flight_details.html', ps = ps, id = id, origin = origin, destination = destination, duration = duration)
