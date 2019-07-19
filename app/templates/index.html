@@ -5,8 +5,8 @@
             <div class="input-group-prepend">
                 <label class="input-group-text" for="inputGroupSelect01">Select Flight</label>
             </div>
-            <select class="custom-select" id="inputGroupSelect01" name="flight">
-                <option selected>Choose...</option>
+            <select class="custom-select" id="inputGroupSelect01" name="flight" required>
+                <option selected value="" disabled>Choose...</option>
                 {% for flight in flights %}
                     <option value="{{ flight.id }}">
                         {{ flight.id }}: From {{ flight.origin }} to {{ flight.destination }} in {{ flight.duration }}
@@ -18,7 +18,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Passenger Name</span>
             </div>
-            <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" required>
         </div>
         <div class="input-group mb-3">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Book My Flight</button>

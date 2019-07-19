@@ -14,4 +14,14 @@ def index():
 def book():
     name = request.form.get('name')
     flight = request.form.get('flight')
+        
+    # check if selected flight exist
+    if Flight.query.filter(Flight.id == flight).first() is None:
+        return flash('Invalid Flight ID')
+    
+    # add passenger to table
+    add_passenger = Passenger(name=name, flight_id=flight)
+    db.session.add(add_passenger)
+    db.session.commit()
+
     return render_template('hello.html', name=name, flight=flight)
